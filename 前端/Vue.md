@@ -1,5 +1,3 @@
-[toc]
-
 # Vue.js概述
 
 ## Vue是什么？
@@ -152,7 +150,7 @@ Vue(读音 /vjuː/，类似于 **view**) 是一套用于构建用户界面的**�
 
 概念：**MVVM（Model–view–viewmodel**）是一种软件[架构模式](https://zh.wikipedia.org/wiki/架构模式)。
 
-MVVM有助于将[图形用户界面](https://zh.wikipedia.org/wiki/图形用户界面)的开发与[业务逻辑](https://zh.wikipedia.org/wiki/业务逻辑)或[后端](https://zh.wikipedia.org/wiki/前端和后端)逻辑（*数据模型*）的开发[分离](https://zh.wikipedia.org/wiki/关注点分离)开来，这是通过[置标语言](https://zh.wikipedia.org/wiki/置标语言)或GUI代码实现的。MVVM的*视图模型*是一个值转换器，[[1\]](https://zh.wikipedia.org/wiki/MVVM#cite_note-MVVM-eliminates-valueconverters-1) 这意味着视图模型负责从模型中暴露（转换）[数据对象](https://zh.wikipedia.org/wiki/对象_(计算机科学))，以便轻松管理和呈现对象。在这方面，视图模型比视图做得更多，并且处理大部分视图的显示逻辑。[[1\]](https://zh.wikipedia.org/wiki/MVVM#cite_note-MVVM-eliminates-valueconverters-1) 视图模型可以实现[中介者模式](https://zh.wikipedia.org/wiki/中介者模式)，组织对视图所支持的[用例](https://zh.wikipedia.org/wiki/用例)集的后端逻辑的访问。
+MVVM 有助于将[图形用户界面](https://zh.wikipedia.org/wiki/图形用户界面)的开发与[业务逻辑](https://zh.wikipedia.org/wiki/业务逻辑)或[后端](https://zh.wikipedia.org/wiki/前端和后端)逻辑（*数据模型*）的开发[分离](https://zh.wikipedia.org/wiki/关注点分离)开来，这是通过[置标语言](https://zh.wikipedia.org/wiki/置标语言)或GUI代码实现的。MVVM的*视图模型*是一个值转换器，[[1\]](https://zh.wikipedia.org/wiki/MVVM#cite_note-MVVM-eliminates-valueconverters-1) 这意味着视图模型负责从模型中暴露（转换）[数据对象](https://zh.wikipedia.org/wiki/对象_(计算机科学))，以便轻松管理和呈现对象。在这方面，视图模型比视图做得更多，并且处理大部分视图的显示逻辑。[[1\]](https://zh.wikipedia.org/wiki/MVVM#cite_note-MVVM-eliminates-valueconverters-1) 视图模型可以实现[中介者模式](https://zh.wikipedia.org/wiki/中介者模式)，组织对视图所支持的[用例](https://zh.wikipedia.org/wiki/用例)集的后端逻辑的访问。
 
 <img src="https://zym-notes.oss-cn-shenzhen.aliyuncs.com/img/image-20210721113720693.png" alt="image-20210721113720693" style="zoom: 80%;" />
 
@@ -180,7 +178,7 @@ MVVM有助于将[图形用户界面](https://zh.wikipedia.org/wiki/图形用户�
 
 ### 以计数器为例：
 
-<img src="https://zym-notes.oss-cn-shenzhen.aliyuncs.com/img/image-20210721115212335.png" alt="image-20210721115212335" style="zoom: 80%;" />
+![image-20221109101051289](https://zym-notes.oss-cn-shenzhen.aliyuncs.com/img/image-20221109101051289.png)
 
 # 创建Vue时传入的options
 
@@ -2229,7 +2227,7 @@ props是对象时，需要指定数据的数据类型
 
 **作用域插槽：**
 
-父组件替换插槽里的标签，但标签的内容由子组件通过
+父组件替换插槽里的标签，但标签的内容由子组件提供
 
 其实就是调用组件时，把slot里需要使用的数据交给父组件，使用新的方法展示
 
@@ -3085,9 +3083,7 @@ historyApiFallback：在SPA页面中，依赖HTML5的history模式
 
    **方式一**
 
-   找到 webpack-dev-server 命令所在目录，并执行
-
-   命令：`.\node_modules\.bin\webpack-dev-server`
+   找到 webpack-dev-server 命令所在目录，并执行命令：`.\node_modules\.bin\webpack-dev-server`
 
    **方式二**
 
@@ -3101,7 +3097,7 @@ historyApiFallback：在SPA页面中，依赖HTML5的history模式
        "server": "webpack-dev-server --open"
      },
    ```
-
+   
    然后运行`npm run service`启动服务
 
 # 将开发时的配置文件和发布时的配置文件抽离
@@ -4918,5 +4914,3 @@ public class indexController {
     }
 }
 ```
-
-![image-20210825161835032](https://zym-notes.oss-cn-shenzhen.aliyuncs.com/img/image-20210825161835032.png)

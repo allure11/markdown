@@ -220,6 +220,37 @@ docker commit 提交容器副本使之成为一个新的镜像
 
 ![image-20220517174434230](https://zym-notes.oss-cn-shenzhen.aliyuncs.com/img/image-20220517174434230.png)
 
+## 容器跟随 docker 服务自动启动
+
+部署项目服务器时，为了应对停电等情况影响正常web项目的访问，会把Docker容器设置为开机自动启动。
+
+- 在使用docker run启动容器时，使用--restart参数来设置：
+
+```
+# docker run -m 512m --memory-swap 1G -it -p 58080:8080 --restart=always 
+--name bvrfis --volumes-from logdata mytomcat:4.0 /root/run.sh
+```
+
+> restart具体参数值详细信息： 
+>
+> ​	no - 容器退出时，不重启容器；
+>
+> ​	on-failure - 只有在非0状态退出时才从新启动容器；
+>
+> ​	always - 无论退出状态是如何，都重启容器；
+
+- 还可以在使用 on-failure 策略时，指定 Docker 将尝试重新启动容器的最大次数。默认情况下，Docker 将尝试永远重新启动容器。
+
+```
+docker run --restart=on-failure:10 redis
+```
+
+- 如果创建时未指定 --restart=always ,可通过 update 命令
+
+```
+docker update --restart=always redis
+```
+
 ## 将镜像推送到阿里云镜像库
 
 参考：https://cr.console.aliyun.com/repository/cn-hangzhou/zym_test/test01/details
