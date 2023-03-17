@@ -79,7 +79,9 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot
 </dependency>
 ```
 
-## 主启动类
+![image-20230203143419494](https://zym-notes.oss-cn-shenzhen.aliyuncs.com/img/image-20230203143419494.png)
+
+## 主启动类 
 
 ### `@SpringBootApplication`
 
@@ -125,7 +127,7 @@ public @interface SpringBootApplication {
 
 往里看，发现这个注解其实就是一个我们常用的 `@Configuration` 注解，在看 `@Configuration` 注解里面最终是一个 `@Component` 注解，这说明启动类本身也只是 SpringBoot 应用中的一个组件，它负责启动应用。
 
-#### @EnableAutoConfiguration
+#### :star: @EnableAutoConfiguration
 
 这个注解的主要功能就是开启自动配置，之前我们需要自己配置的内容现在 SpringBoot 可以帮我们自动配置，`@EnableAutoConfiguration` 注解就相当于告诉 SpringBoot ，让其帮我们配置好所需的内容，这样，自动配置才能生效。
 
@@ -141,14 +143,14 @@ public @interface EnableAutoConfiguration {
 
 自动配置包，其实就是通过 `@Import` 引入了 `Registrar` 类
 
-Registrar.class 作用：将主启动类所在包及包下面所有子包里面的所有组件扫描到 Spring 容器；
+  作用：将主启动类所在包及包下面所有子包里面的所有组件扫描到 Spring 容器；
 
 ```java
 @Import(AutoConfigurationPackages.Registrar.class)
 public @interface AutoConfigurationPackage {
 ```
 
-##### @Import({AutoConfigurationImportSelector.class})
+##### :star: @Import({AutoConfigurationImportSelector.class})
 
 > **@import**：自动注册包和 @ComponentScan 自动扫描包，是联动的）Spring 底层注解 @import，给容器中导入一个组件。
 
